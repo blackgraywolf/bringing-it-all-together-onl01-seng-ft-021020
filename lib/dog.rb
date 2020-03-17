@@ -6,7 +6,15 @@ class Dog
     attributes.each {|key, value| self.send(("#{key}="), value)}
     self.id ||= nil
   end
-  
+    def self.new_from_db(row)
+    attributes_hash = {
+      :id => row[0],
+      :name => row[1],
+      :breed => row[2]
+    }
+    self.new(attributes_hash)
+  end
+
 def save
 if self.id
 self.update
