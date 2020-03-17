@@ -42,7 +42,7 @@ end
       DB[:conn].execute(sql, self.name, self.breed, self.id)
   end
 
-#Let's build our #find_or_create_by method:
+
 
 def self.find_or_create_by(name:, breed:)
 dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
