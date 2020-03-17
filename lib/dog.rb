@@ -29,8 +29,8 @@ DB[:conn].execute(sql, self.name, self.breed)
 end
 end
  
-def self.create(name:, breed:)
-dog = Dog.new(name, breed)
+def self.create(attributes_hash)
+dog = Dog.new(attributes_hash)
 dog.save
 dog
 end
