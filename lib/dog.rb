@@ -15,7 +15,7 @@ class Dog
     self.new(attributes_hash)
   end
 
-def save
+def saves
     sql = <<-SQL
       INSERT INTO dogs (name, breed) VALUES (?, ?)
       SQL
