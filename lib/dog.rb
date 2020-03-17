@@ -58,7 +58,10 @@ SQL
  SQL
 	DB[:conn].execute(sql)
 	end
-
+	
+  def self.drop_table 
+    DB[:conn].execute("DROP TABLE IF EXISTS dogs")
+  end
 
 def self.find_or_create_by(name:, breed:)
 dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
